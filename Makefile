@@ -1,3 +1,4 @@
 .PHONY: generate
 generate:
-	cd dolma && flatc --go ../signature/signature.fbs
+	rm -rf generated/*
+	protoc --proto_path=definitions signature.proto --go_out=generated
